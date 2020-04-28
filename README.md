@@ -21,3 +21,7 @@ React JS Fundamentals Course (2020 update!)
     - 그 다음에 render가 일어난다.
     - 그 이후 componentDidMount()가 일어난다.
     - 따라서 setState를 호출하면 component를 호출하고, 먼저 render를 호출한 다음 업데이트가 완료되었다는 componentDidUpdate가 실행된다.
+
+## axios
+
+    - npm i axios
