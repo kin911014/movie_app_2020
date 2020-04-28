@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 // 위는 property들이 알맞게 사용되었는지, 아니라면 어디에 문제가 
 // 있는지 console에 오류를 보내준다.
 
@@ -57,20 +56,37 @@ function record(){
 }
 
 class App extends React.Component{
+  constructor(props){
+    super(props);
+    console.log("hello");
+  }
   // state는 obj이고 component의 data를 넣을 공간이 있으며 가변한다.
   state = {
-    count: 1
+    count: 0
   };
   // react는 자동적으로 모든 class component의 render method를 실행시킨다.
 
   add = () => {
-    console.log("add");
+    this.setState(current => ({count: current.count +1}));
   };
   minus = () => {
-    console.log("minus");
+    this.setState(current =>({count: current.count -1}));
   };
 
+  componentDidMount(){
+    console.log("component rendered");
+  }
+  
+  componentDidUpdate(){
+    console.log("i just update!!");
+  }
+  
+  componentWillUnmount(){
+    console.log("goodbye");
+  }
+  
   render(){
+    console.log("i'm rendering");
   return (
    <div>
      <h1>im a class: {this.state.count}</h1>
